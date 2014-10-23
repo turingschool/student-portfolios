@@ -1,0 +1,4 @@
+<h1><%= "#{@project.name}: #{@project.subtitle}" %></h1>
+Description: <%= @project.description %> <br>
+Github URL: <%= link_to "Repository", @project.github_url %> <br>
+Live URL: <%= link_to "See project live", @project.live_url %>

@@ -1,0 +1,21 @@
+<h1>New Project</h1>
+<%=  form_for(@project) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %> <br>
+
+	<%= f.label :subtitle %>
+	<%= f.text_field :subtitle %> <br>	
+
+	<%= f.label "Github URL" %>
+	<%= f.text_field :github_url %> <br>
+
+	<%= f.label "Live URL" %>
+	<%= f.text_field :live_url %> <br>
+
+	<%= f.label :description %>
+	<%= f.text_area :description %> <br>
+
+	<%= f.hidden_field :user_id, value: current_user.id %>
+
+	<%= f.submit %>
+<% end %>

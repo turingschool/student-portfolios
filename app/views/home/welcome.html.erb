@@ -1,0 +1,19 @@
+<% if current_user %>
+	<%= image_tag avatar_url(current_user) %>
+	<%= link_to "Sign out", logout_path %>
+	<h1>Welcome, <%= current_user.name %>!</h1>
+	<h3>Profile</h3>
+	Group: <%= current_user.group.name if current_user.group %> <br>
+	Email: <%= mail_to current_user.email %> <br>
+	Github: <%= link_to "Github", current_user.github_url %> <br>
+	Resume: <%= link_to "Resume", current_user.resume_url %> <br>
+	Looking for: <%= current_user.looking_for %> <br> <br>
+	<%= link_to "Edit Profile", edit_user_path(current_user) %>
+	<h3>Projects</h3>
+	<% current_user.projects.each do |project| %>
+		<%= link_to "#{project.name}: #{project.subtitle}", project_path(project) %> <br>
+	<% end %>
+	<%= link_to "Add Project", new_project_path %>
+<% else %>
+	<%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>
