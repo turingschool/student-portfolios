@@ -1,7 +1,0 @@
-== README
-
-1. Clone repo
-
-2. Bundle
-
-3. Set GITHUB_KEY & GITHUB_SECRET environment variables
